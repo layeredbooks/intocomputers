@@ -26,33 +26,3 @@ which results in the printout
     Hello, world
 
 
-
-
-
-
-
-
-
-
-
-We can install Icarus Verilog on Mac, using information about
-installation from source from this
-[installation guide](https://iverilog.fandom.com/wiki/Installation_Guide).
-
-We create a directory for the repo, as
-
-    mkdir -p $HOME/sw_repo
-    cd $HOME/sw_repo
-
-We clone the Git repo, as
-
-    git clone https://github.com/steveicarus/iverilog.git
-
-The source can then be extracted and built, using the commands
-
-    cd iverilog
-	sh autoconf.sh
-	./configure --prefix=$HOME/sw/iverilog
-	make
-	make install
-

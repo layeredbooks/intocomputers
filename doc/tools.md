@@ -19,3 +19,4 @@ For the Verilog layer, we use  [Icarus Verilog](iverilog.md).
 
 ## SystemC/TLM
 
+For the SystemC/TLM layer, we use [SystemC and TLM](systemc_tlm.md).
