@@ -35,7 +35,7 @@ We can test the build, by doing
 
     make -j check
 
-which takes some time to execute.
+which might take some time to execute.
 
 As a last step, we can install by doing
 

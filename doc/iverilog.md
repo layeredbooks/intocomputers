@@ -19,7 +19,7 @@ We can try the installed Icarus Verilog on an example, with Verilog code in a fi
 
 The above command generates the file hello, which can be run, by doing
 
-    vvp hello 
+    vvp hello
 
 which results in the printout
 

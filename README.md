@@ -27,7 +27,7 @@ This is done, for VHDL, as
     cd hello/vhdl
     make
     ./run.sh
-    
+
 For Verilog, the commands are
 
     cd hello/verilog

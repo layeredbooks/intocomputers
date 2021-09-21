@@ -3,8 +3,7 @@
 ## Ubuntu
 
 We can install [SystemC and TLM ](https://accellera.org/downloads/standards/systemc)
-in Ubuntu, by
-downloading SystemC/TLM and [building from source](systemc_tlm_ubuntu.md).
+in Ubuntu, by [building from source](systemc_tlm_ubuntu.md).
 
 ## Mac
 

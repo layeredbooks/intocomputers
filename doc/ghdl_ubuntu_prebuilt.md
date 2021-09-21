@@ -1,4 +1,8 @@
-# Installing a prebuilt ghdl on  Mac
+# Installing a prebuilt ghdl on Ubuntu
+
+We start with installing gnat, as
+
+    sudo apt install gnat
 
 From the
 [GHDL GitHub site](https://github.com/ghdl/ghdl), we learn that
@@ -13,11 +17,11 @@ From this page with GHDL
 [releases](https://github.com/ghdl/ghdl/releases), a prebuilt version
 can be downloaded, as
 
-    curl -L https://github.com/ghdl/ghdl/releases/download/nightly/ghdl-macos-10.15-mcode.tgz --output ghdl-macos-10.15-mcode.tgz
+    curl -L https://github.com/ghdl/ghdl/releases/download/nightly/ghdl-gha-ubuntu-18.04-mcode.tgz --output ghdl-gha-ubuntu-18.04-mcode.tgz
 
 After unpacking, as
 
-    tar zxvf ghdl-macos-10.15-mcode.tgz
+    tar zxvf ghdl-gha-ubuntu-18.04-mcode.tgz
 
 and moving the unpacked content to a directory created and chosen for the GHDL
 installation, as
@@ -30,8 +34,8 @@ installation, as
 we can try the installation on an example.
 
 Assuming that ghdl is in the *PATH* environment variable, either by
-sourcing the file
-[mac.sh](../setup/mac.sh) or by a command, such as
+sourcing the file [ubuntu.sh](../setup/ubuntu.sh) or
+by a command, such as
 
     export PATH=$HOME/sw/ghdl/bin:$PATH
 
