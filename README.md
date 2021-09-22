@@ -33,3 +33,9 @@ For Verilog, the commands are
     cd hello/verilog
     make
     ./run.sh
+
+For SystemC/TLM, the commands are
+
+    cd hello/systemc_tlm
+    make
+    ./run.sh
