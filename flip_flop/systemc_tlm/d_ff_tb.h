@@ -18,10 +18,8 @@ class d_ff_tb : sc_core::sc_module
     // fig_begin d_ff_stim
     void stim_gen()
     {
-        d_ff_data_in.write(true);
-        wait(1, sc_core::SC_NS);
         d_ff_data_in.write(false);
-        wait(5, sc_core::SC_NS);
+        wait(6, sc_core::SC_NS);
         d_ff_data_in.write(true);
         wait(3, sc_core::SC_NS);
         d_ff_data_in.write(false);
@@ -32,6 +30,7 @@ class d_ff_tb : sc_core::sc_module
     void reporter()
     {
         std::cout << "Time: " << sc_core::sc_time_stamp(); 
+        std::cout << ", clk=" << clk.read(); 
         std::cout << ", data_in=" << d_ff_data_in.read(); 
         std::cout << ", data_out=" << d_ff_data_out.read()
                   << std::endl;
@@ -42,7 +41,7 @@ public:
         sc_core::sc_module(name),
         d_ff_0("d_ff_0"),
         //fig_begin clk_gen
-        clk("d_ff_clk", 4, sc_core::SC_NS, 1.0)
+        clk("d_ff_clk", 4, sc_core::SC_NS, 0.5, 2, sc_core::SC_NS, true)
         //fig_end clk_gen
     {
         SC_THREAD(stim_gen);
@@ -59,11 +58,12 @@ public:
     void init_sc_trace()
     {
         sc_core::sc_trace_file *d_ff_tb_wave =
-            sc_core::sc_create_vcd_trace_file("d_ff_tb_wave");
+            sc_core::sc_create_vcd_trace_file("d_ff_tb_systemc_tlm_wave");
 
         sc_core::sc_trace(d_ff_tb_wave, d_ff_0.clk, "clk");
         sc_core::sc_trace(d_ff_tb_wave, d_ff_0.data_in, "data_in");
         sc_core::sc_trace(d_ff_tb_wave, d_ff_0.data_out, "data_out");
+        sc_core::sc_trace(d_ff_tb_wave, d_ff_0.reg_value, "reg_value");
     }    
 }; 
 // fig_end d_ff_tb_h

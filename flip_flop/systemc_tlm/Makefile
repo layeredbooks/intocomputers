@@ -1,3 +1,6 @@
+tb: d_ff_tb
+waves: d_ff_tb_systemc_tlm_wave.png
+
 UNAME_S := $(shell uname -s)
 
 ifeq ($(UNAME_S),Linux)
@@ -12,6 +15,15 @@ d_ff_tb: d_ff_tb.o
 d_ff_tb.o: d_ff_tb.cpp d_ff.h d_ff_tb.h
 	g++ -Wall -std=c++11 -c -I $(HOME)/sw/systemc/include $<
 
+d_ff_tb_systemc_tlm_wave.vcd.png: d_ff_tb_systemc_tlm_wave.vcd
+	gtkwave d_ff_tb_systemc_tlm_wave.vcd -S $(BASE_DIR)/lib/tcl/make_png.tcl
+
+d_ff_tb_systemc_tlm_wave.png: d_ff_tb_systemc_tlm_wave.vcd.png
+	convert $< -colorspace Gray $@
+
 .PHONY: clean
 clean:
-	rm -f d_ff_tb d_ff_tb.o d_ff_tb_wave.vcd
+	rm -f d_ff_tb d_ff_tb.o \
+	$(addprefix d_ff_tb_systemc_tlm_wave, .vcd .vcd.png .png)
+
+

@@ -14,12 +14,12 @@ architecture behavior of d_ff_tb is
       data_out: out std_logic);
   end component;
 
-  signal clk: std_logic := '1';
+  signal clk: std_logic := '0';
 
   constant clk_half_period: time := 2 ns; 
   constant n_clk_cycles: integer := 4; 
 
-  signal d_ff_data_in: std_logic := '1'; 
+  signal d_ff_data_in: std_logic := '0'; 
   signal d_ff_data_out: std_logic;
 
 begin
@@ -34,10 +34,10 @@ begin
   begin
     for i in 1 to n_clk_cycles loop
       -- fig_begin clk_gen
-      clk <= '1';
       wait for clk_half_period;
-      clk <= '0';
+      clk <= '1';
       wait for clk_half_period; 
+      clk <= '0';
       -- fig_end clk_gen
     end loop;
     wait; 
@@ -59,7 +59,7 @@ begin
   -- fig_begin report_gen
   reporter: process(clk, d_ff_data_in) is
   begin
-    if (rising_edge(clk) or d_ff_data_in'event) then
+    if (rising_edge(clk) or falling_edge(clk) or d_ff_data_in'event) then
        report "data_in=" & std_logic'image(d_ff_data_in) & 
               ", data_out=" & std_logic'image(d_ff_data_out);
     end if; 

@@ -1,0 +1,24 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Sat Jan  1 19:08:57 2022
+[*]
+[dumpfile] "/Users/ola/repo/intocomputers/flip_flop/vhdl/d_ff_tb_wave.vcd"
+[dumpfile_mtime] "Sat Jan  1 18:57:57 2022"
+[dumpfile_size] 670
+[savefile] "/Users/ola/repo/intocomputers/flip_flop/vhdl/d_ff_tb_wave.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-22.235575 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] d_ff_tb.
+[sst_width] 193
+[signals_width] 107
+[sst_expanded] 1
+[sst_vpaned_height] 167
+@28
+d_ff_tb.d_ff_0.clk
+d_ff_tb.d_ff_0.data_in
+d_ff_tb.d_ff_0.data_out
+d_ff_tb.d_ff_0.reg_value
+[pattern_trace] 1
+[pattern_trace] 0

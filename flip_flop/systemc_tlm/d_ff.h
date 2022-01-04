@@ -13,9 +13,9 @@ public:
     sc_core::sc_in<bool> data_in;
     sc_core::sc_out<bool> data_out;
 
-private:
     bool reg_value;
 
+private:
     void update()
     {
         reg_value = data_in.read();

@@ -3,15 +3,15 @@
 
 module d_ff_tb;
 
-   reg clk = 1;
+   reg clk = 0;
     
-   reg d_ff_data_in = 1;
+   reg d_ff_data_in = 0;
    wire d_ff_data_out;
 
    // fig_begin report_gen
    initial begin
-      $monitor("At time %2t, data_in=%b, data_out=%b", 
-               $time, d_ff_data_in, d_ff_data_out);
+      $monitor("At time %2t, clk=%b, data_in=%b, data_out=%b", 
+               $time, clk, d_ff_data_in, d_ff_data_out);
       #16 $finish;
    end
    // fig_end report_gen
@@ -25,7 +25,7 @@ module d_ff_tb;
    // fig_end input_gen
 		   
    initial begin
-      $dumpfile("d_ff_tb_wave.vcd");
+      $dumpfile("d_ff_tb_verilog_wave.vcd");
       $dumpvars(0,d_ff_0);
    end
 

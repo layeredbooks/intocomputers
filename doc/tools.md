@@ -6,8 +6,9 @@ Into Computers.
 ## System Requirements
 
 We have installed, and used, tools on
+
 * Ubuntu
-* macOS Big Sur
+* macOS Monterey
 
 ## VHDL
 
@@ -20,3 +21,7 @@ For the Verilog layer, we use  [Icarus Verilog](iverilog.md).
 ## SystemC/TLM
 
 For the SystemC/TLM layer, we use [SystemC and TLM](systemc_tlm.md).
+
+## Waveforms
+
+For visualizing waveforms, we use [GTKWave](gtkwave.md).
