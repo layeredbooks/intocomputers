@@ -1,4 +1,3 @@
--- fig_begin d_ff_tb
 library ieee; 
 use ieee.std_logic_1164.all;
 
@@ -33,17 +32,14 @@ begin
   clk_gen: process is
   begin
     for i in 1 to n_clk_cycles loop
-      -- fig_begin clk_gen
       wait for clk_half_period;
       clk <= '1';
       wait for clk_half_period; 
       clk <= '0';
-      -- fig_end clk_gen
     end loop;
     wait; 
   end process;
 
-  -- fig_begin input_gen
   stim_gen: process is
   begin
     wait for 1 ns;
@@ -54,9 +50,7 @@ begin
     d_ff_data_in <= '0';
     wait;
   end process; 
-  -- fig_end input_gen
 
-  -- fig_begin report_gen
   reporter: process(clk, d_ff_data_in) is
   begin
     if (rising_edge(clk) or falling_edge(clk) or d_ff_data_in'event) then
@@ -64,7 +58,5 @@ begin
               ", data_out=" & std_logic'image(d_ff_data_out);
     end if; 
   end process; 
-  -- fig_end report_gen
 
 end behavior; 
--- fig_end d_ff_tb

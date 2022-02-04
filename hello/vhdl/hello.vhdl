@@ -1,4 +1,3 @@
--- fig_begin hello    
 use std.textio.all;
 
 entity hello_world is
@@ -14,6 +13,5 @@ begin
     wait;
   end process;
 end behavior;
--- fig_end hello
 
                  

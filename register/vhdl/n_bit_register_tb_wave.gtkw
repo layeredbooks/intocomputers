@@ -1,0 +1,25 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Wed Feb  2 05:07:00 2022
+[*]
+[dumpfile] "/Users/ola/repo/intocomputers/register/vhdl/n_bit_register_tb_vhdl_wave.vcd"
+[dumpfile_mtime] "Wed Feb  2 05:06:04 2022"
+[dumpfile_size] 952
+[savefile] "/Users/ola/repo/intocomputers/register/vhdl/Untitled.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-22.656561 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] n_bit_register_tb.
+[sst_width] 193
+[signals_width] 150
+[sst_expanded] 1
+[sst_vpaned_height] 167
+@28
+n_bit_register_tb.n_bit_register_0.clk
+@22
+n_bit_register_tb.n_bit_register_0.data_in[3:0]
+n_bit_register_tb.n_bit_register_0.data_out[3:0]
+n_bit_register_tb.n_bit_register_0.reg_value[3:0]
+[pattern_trace] 1
+[pattern_trace] 0

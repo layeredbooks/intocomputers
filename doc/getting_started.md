@@ -59,7 +59,7 @@ You can view an example waveform, for VHDL, as
 or for Verilog, as
 
 ~~~
-./view_one.sh ../flip_flop/vhdl/
+./view_one.sh ../flip_flop/verilog/
 ~~~
 
 You can view all waveforms, by doing

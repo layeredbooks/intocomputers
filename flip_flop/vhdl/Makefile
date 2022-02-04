@@ -5,7 +5,7 @@ work-obj93.cf: d_ff.vhdl d_ff_tb.vhdl
 	ghdl -a $^
 
 d_ff_tb_vhdl_wave.vcd.png: d_ff_tb_vhdl_wave.vcd
-	gtkwave d_ff_tb_vhdl_wave.vcd d_ff_tb_wave.gtkw -S $(BASE_DIR)/lib/tcl/grab_png.tcl
+	gtkwave $< d_ff_tb_wave.gtkw -S $(BASE_DIR)/lib/tcl/grab_png.tcl
 
 d_ff_tb_vhdl_wave.png: d_ff_tb_vhdl_wave.vcd.png
 	convert $< -colorspace Gray $@

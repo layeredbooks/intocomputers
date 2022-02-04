@@ -1,4 +1,3 @@
-// fig_begin hello
 module main;
 
 initial
@@ -8,4 +7,3 @@ initial
   end
 
 endmodule
-// fig_end hello

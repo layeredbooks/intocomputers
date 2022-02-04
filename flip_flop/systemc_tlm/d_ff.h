@@ -3,7 +3,6 @@
 
 #include "systemc"
 
-// fig_begin d_ff
 class d_ff : sc_core::sc_module
 {
     SC_HAS_PROCESS(d_ff);
@@ -30,6 +29,5 @@ public:
         sensitive << clk.pos(); 
     }
 }; 
-// fig_end d_ff
 
 #endif

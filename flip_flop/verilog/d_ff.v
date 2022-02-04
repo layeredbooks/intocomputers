@@ -1,4 +1,3 @@
-// fig_begin d_ff
 module d_ff(clk, data_in, data_out);
 
    input clk;
@@ -15,7 +14,6 @@ module d_ff(clk, data_in, data_out);
    assign data_out = reg_value;
 
 endmodule    
-// fig_end d_ff
      
    
       

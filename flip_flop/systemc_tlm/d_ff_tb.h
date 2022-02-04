@@ -5,7 +5,6 @@
 
 #include "d_ff.h"
 
-// fig_begin d_ff_tb_h
 class d_ff_tb : sc_core::sc_module
 {
     SC_HAS_PROCESS(d_ff_tb);
@@ -15,7 +14,6 @@ class d_ff_tb : sc_core::sc_module
     sc_core::sc_signal<bool> d_ff_data_in; 
     sc_core::sc_signal<bool> d_ff_data_out;
 
-    // fig_begin d_ff_stim
     void stim_gen()
     {
         d_ff_data_in.write(false);
@@ -25,7 +23,6 @@ class d_ff_tb : sc_core::sc_module
         d_ff_data_in.write(false);
         wait(); 
     }
-    // fig_end d_ff_stim
 
     void reporter()
     {
@@ -40,19 +37,15 @@ public:
     d_ff_tb(sc_core::sc_module_name name):
         sc_core::sc_module(name),
         d_ff_0("d_ff_0"),
-        //fig_begin clk_gen
         clk("d_ff_clk", 4, sc_core::SC_NS, 0.5, 2, sc_core::SC_NS, true)
-        //fig_end clk_gen
     {
         SC_THREAD(stim_gen);
         d_ff_0.clk(clk); 
         d_ff_0.data_in(d_ff_data_in); 
         d_ff_0.data_out(d_ff_data_out);
         SC_METHOD(reporter);
-        // fig_begin d_ff_tb_sensitive
         sensitive << d_ff_0.clk.pos();
         sensitive << d_ff_data_in; 
-        // fig_end d_ff_tb_sensitive
     }
 
     void init_sc_trace()
@@ -66,6 +59,5 @@ public:
         sc_core::sc_trace(d_ff_tb_wave, d_ff_0.reg_value, "reg_value");
     }    
 }; 
-// fig_end d_ff_tb_h
 
 #endif

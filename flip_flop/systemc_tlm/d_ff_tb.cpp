@@ -1,4 +1,3 @@
-// fig_begin d_ff_tb_main
 #include "systemc"
 #include "d_ff_tb.h"
 
@@ -12,4 +11,3 @@ int sc_main(int argc, char* argv[])
 
     return 0;
 }
-// fig_end d_ff_tb_main

@@ -1,4 +1,3 @@
--- fig_begin d_ff
 library ieee;
 use ieee.std_logic_1164.all; 
 
@@ -25,4 +24,3 @@ begin
   data_out <= reg_value;
 
 end rtl; 
--- fig_end d_ff
