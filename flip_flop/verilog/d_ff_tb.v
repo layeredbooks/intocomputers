@@ -15,8 +15,8 @@ module d_ff_tb;
 
    initial begin
       #1 d_ff_data_in = 0;
-      #5 d_ff_data_in = 1;
-      #3 d_ff_data_in = 0;
+      #4 d_ff_data_in = 1;
+      #4 d_ff_data_in = 0;
    end
 		   
    initial begin

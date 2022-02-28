@@ -44,9 +44,9 @@ begin
   begin
     wait for 1 ns;
     d_ff_data_in <= '0';
-    wait for 5 ns;
+    wait for 4 ns;
     d_ff_data_in <= '1';
-    wait for 3 ns;
+    wait for 4 ns;
     d_ff_data_in <= '0';
     wait;
   end process; 

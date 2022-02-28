@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-dir_list="hello flip_flop register"
+dir_list="hello flip_flop register instruction/memory"
 
 layer_list="vhdl verilog systemc_tlm"
 

@@ -17,9 +17,9 @@ class d_ff_tb : sc_core::sc_module
     void stim_gen()
     {
         d_ff_data_in.write(false);
-        wait(6, sc_core::SC_NS);
+        wait(5, sc_core::SC_NS);
         d_ff_data_in.write(true);
-        wait(3, sc_core::SC_NS);
+        wait(4, sc_core::SC_NS);
         d_ff_data_in.write(false);
         wait(); 
     }
