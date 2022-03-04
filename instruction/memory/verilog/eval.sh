@@ -3,8 +3,9 @@
 set -euo pipefail
 
 d_name=$1
+output_log=$2
 
-data_out=$(grep -A12 $d_name output.log | grep data_out | \
+data_out=$(grep -A12 $d_name $output_log | grep data_out | \
            sed 's/^.*data_out=//' | tr '\n' ' ' | tr -d "\'" | sed 's/[ \t]*$//')
 
 expected_data_out="000012b7 00002337 000033b7 000002b7 00000337 000003b7 xxxxxxxx"
