@@ -17,3 +17,11 @@ export PATH=$HOME/sw/ghdl/bin:$PATH
 # gtk_wave
 # export GTK_WAVE=$HOME/sw/gtkwave/gtkwave.app/Contents/Resources/bin/gtkwave
 export PATH=$HOME/sw/gtkwave/gtkwave.app/Contents/Resources/bin:$PATH
+
+# QEMU
+
+export PATH=$HOME/sw/qemu_riscv/bin:$PATH
+
+# RISC-V toolchain
+
+export PATH=$HOME/sw/gcc_riscv/bin:$PATH
