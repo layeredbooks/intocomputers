@@ -5,7 +5,7 @@
 d_name=$1
 layer=$2
 
-c_dir=$(PWD)
+c_dir=$PWD
 output_log=$c_dir/${layer}_output.log
 
 pushd $d_name > /dev/null

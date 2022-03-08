@@ -5,6 +5,8 @@
 
 #include "n_bit_register.h"
 
+#include <bitset>
+
 class n_bit_register_tb : sc_core::sc_module
 {
     sc_clock clk; 

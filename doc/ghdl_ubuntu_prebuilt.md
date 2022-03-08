@@ -15,14 +15,22 @@ A directory for the download can be created, as
 
 From this page with GHDL
 [releases](https://github.com/ghdl/ghdl/releases), a prebuilt version
-can be downloaded, as
+can be downloaded, for Ubuntu 18.04, as
 
     curl -L https://github.com/ghdl/ghdl/releases/download/nightly/ghdl-gha-ubuntu-18.04-mcode.tgz --output ghdl-gha-ubuntu-18.04-mcode.tgz
 
-After unpacking, as
+and for Ubuntu 20.04, as
+
+    curl -L https://github.com/ghdl/ghdl/releases/download/nightly/ghdl-gha-ubuntu-20.04-mcode.tgz --output ghdl-gha-ubuntu-20.04-mcode.tgz
+ 
+ After unpacking, for Ubuntu 18.04 as
 
     tar zxvf ghdl-gha-ubuntu-18.04-mcode.tgz
 
+and for Ubuntu 20.04, as
+
+    tar zxvf ghdl-gha-ubuntu-20.04-mcode.tgz
+ 
 and moving the unpacked content to a directory created and chosen for the GHDL
 installation, as
 

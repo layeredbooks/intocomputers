@@ -3,28 +3,15 @@
 We use a gcc-based 
 [RISC-V toolchain](https://github.com/riscv-collab/riscv-gnu-toolchain).
 
-Before cloning the repo for the toolchain, we create, as
-[recommended](https://github.com/riscv-collab/riscv-gnu-toolchain#readme),
-a case-sensitive
-partition on the Mac filesystem.
-
-We do this, using the 
-[Disk
-Utility](https://kb.sandisk.com/app/answers/detail/a_id/20985/~/how-to-access-disk-utility-on-mac-os)
-program, where we create a new, case-sensitive, image, following instructions from
-[this post](https://coderwall.com/p/mgi8ja/case-sensitive-git-in-mac-os-x-like-a-pro).
-
 We clone the repo, using
 
-    git clone https://github.com/riscv/riscv-gnu-toolchain
+    git clone https://github.com/riscv-collab/riscv-gnu-toolchain
 
 Some programs are installed, as
 [recommended](https://github.com/riscv-collab/riscv-gnu-toolchain#readme),
 by doing
 
-    brew install python3 gawk gnu-sed gmp mpfr libmpc isl zlib expat
-    brew tap discoteq/discoteq
-    brew install flock
+    sudo apt-get install autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev
 
 We navigate to the cloned repo, as
     

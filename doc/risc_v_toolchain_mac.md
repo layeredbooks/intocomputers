@@ -11,8 +11,19 @@ partition on the Mac filesystem.
 We do this, using the 
 [Disk
 Utility](https://kb.sandisk.com/app/answers/detail/a_id/20985/~/how-to-access-disk-utility-on-mac-os)
-program, where we create a new, case-sensitive, image, following instructions from
-[this post](https://coderwall.com/p/mgi8ja/case-sensitive-git-in-mac-os-x-like-a-pro).
+program, where we create a new image using 
+
+*File->New Image->Blank Image*
+
+We name the new image *riscv_gcc*, and we select its size as 8 GB.
+
+We select the image Format as *APFS (Case-sensitive )*, and we select a
+location for the image somewhere on our filesystem (I selected the
+Download folder).
+
+We navigate to the image, using
+
+    cd /Volumes/riscv_gcc/
 
 We clone the repo, using
 

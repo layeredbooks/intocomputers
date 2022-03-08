@@ -1,6 +1,9 @@
 #!/bin/bash
 
-SYSTEMC=/usr/local/systemc-2.3.1a
-LIB_DIR=$SYSTEMC/lib-linux64/
-
-LD_LIBRARY_PATH=$LIB_DIR ./one_instruction_tb
+UNAME_S=$(uname -s)
+ 
+if [ $UNAME_S == Linux ]; then
+    LD_LIBRARY_PATH=$HOME/sw/systemc/lib-linux64 ./one_instruction_tb
+else
+    ./one_instruction_tb
+fi

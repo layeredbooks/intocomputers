@@ -1,6 +1,9 @@
 #!/bin/bash
 
-SYSTEMC=/usr/local/systemc-2.3.1a
-LIB_DIR=$SYSTEMC/lib-linux64/
-
-LD_LIBRARY_PATH=$LIB_DIR ./addressing_tb
+UNAME_S=$(uname -s)
+ 
+if [ $UNAME_S == Linux ]; then
+    LD_LIBRARY_PATH=$HOME/sw/systemc/lib-linux64 ./addressing_tb
+else
+    ./addressing_tb
+fi
