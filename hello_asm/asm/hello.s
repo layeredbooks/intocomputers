@@ -1,4 +1,3 @@
-# fig_begin hello_asm
 .global _start
 
 _start:
@@ -34,4 +33,3 @@ _start:
 
 finish:
     beq t1, t1, finish
-# fig_end hello_asm

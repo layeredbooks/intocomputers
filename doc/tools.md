@@ -38,3 +38,18 @@ We use QEMU to run programs (as a reference, to compare with the computer
 we are building), on 
 [Mac](qemu_mac.md) 
 and [Ubuntu](qemu_ubuntu.md).
+
+## Expect
+
+We use 
+[expect](https://linux.die.net/man/1/expect) for running a test with QEMU. 
+
+You can install expect in Mac, using 
+[Homebrew](https://brew.sh/), with the command
+
+    brew install expect
+
+You can install expect in Ubuntu, with the command
+
+    sudo apt install expect
+

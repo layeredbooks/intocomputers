@@ -9,6 +9,8 @@ do
    printf "\n--- Test Log - $date_info ---\n\n" > ${layer}_output.log
 done
 
+printf "\n--- Test Log - $date_info ---\n\n" > all_output.log
+
 ./test_one.sh ../hello/vhdl vhdl
 ./test_one.sh ../hello/verilog verilog
 ./test_one.sh ../hello/systemc_tlm systemc_tlm
@@ -29,5 +31,6 @@ done
 ./test_one.sh ../instruction/decode/verilog verilog
 ./test_one.sh ../instruction/decode/systemc_tlm systemc_tlm
 
-# ../hello/systemc_tlm/test.sh
+./test_one.sh ../hello_asm/asm all
+
 
