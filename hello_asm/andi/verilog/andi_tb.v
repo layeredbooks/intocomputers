@@ -1,7 +1,7 @@
-module one_instruction_tb;
+module andi_tb;
 
-   parameter size = 7;
- 
+   parameter size = 8;
+
    reg clk = 0;
     
    reg mem_write_enable = 0;
@@ -12,21 +12,24 @@ module one_instruction_tb;
 
    wire [31:0] pc_address;
 
-   wire [4:0]  rd;
+   wire [4:0] rs1;
+   reg [4:0] rs2 = 5'b0;
+   wire [4:0] rd;
+   wire [6:0] opcode;
+
    wire [31:0]  imm_value;
 
    reg reg_write_enable = 1;
-   wire [31:0] r0_value;
-   wire [31:0] r1_value;
-   wire [31:0] r2_value;
-      
+   wire [31:0]  rd_value;
+   wire [31:0]  rs1_value;
+   wire [31:0]  rs2_value;
+   
    initial begin
       $monitor("At time %2t",$time, 
                "\npc_value=%h, data_out=%h", pc_value, data_out,
+               ", rs1=%h", rs1,
                "\nrd=%h, imm_value=%h", rd, imm_value, 
-               "\nr0_value=%h", r0_value, 
-               ", r1_value=%h", r1_value, 
-               ", r2_value=%h\n", r2_value);
+               ", rd_value=%h", rd_value);
       #24 $finish;
    end
    
@@ -39,9 +42,11 @@ module one_instruction_tb;
    memory #(.size(size)) 
      memory_0(clk, mem_write_enable, pc_address, data_in, data_out);
 
-   idecode idecode_0 (data_out, imm_value, rd);
+   idecode idecode_0 (data_out, imm_value, rs1, rd, opcode);
 
-   registers registers_0 (clk, rd, imm_value, reg_write_enable,
-                          r0_value, r1_value, r2_value);
+   registers registers_0 (clk, rs1, rs2, rd, rd_value, 
+                          reg_write_enable, rs1_value, rs2_value);
 
+   alu alu_0 (imm_value, rs1_value, opcode, rd_value);
+   
 endmodule

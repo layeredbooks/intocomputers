@@ -13,6 +13,3 @@ module pc(clk, pc_out);
    assign pc_out = pc_value;
 
 endmodule    
-     
-   
-      

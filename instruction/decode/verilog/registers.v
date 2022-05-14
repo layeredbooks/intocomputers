@@ -1,36 +1,36 @@
-module registers(clk, write_enable, reg_id_d, reg_d_value, 
-                 reg_0_value, reg_1_value, reg_2_value);
+module registers(clk, rd, rd_value, we, r0_value, r1_value, r2_value);
 
    input clk;
-   input write_enable;
-   
-   input [4:0] reg_id_d;
-   input [31:0]  reg_d_value;
 
-   output [31:0] reg_0_value;
-   output [31:0] reg_1_value;
-   output [31:0] reg_2_value;
+   input [4:0] rd;
+
+   input [31:0]  rd_value;
+
+   input we;
+   
+   output [31:0] r0_value;
+   output [31:0] r1_value;
+   output [31:0] r2_value;
    
    reg [31:0] reg_0;
    reg [31:0] reg_1;
    reg [31:0] reg_2;
 
-  
    always @(posedge clk) begin
-     if (write_enable == 1)
+     if (we == 1)
      begin
-	case (reg_id_d - 5)
-            0: reg_0 <= reg_d_value;
-            1: reg_1 <= reg_d_value;
-            2: reg_2 <= reg_d_value;
+	case (rd - 5)
+            0: reg_0 <= rd_value;
+            1: reg_1 <= rd_value;
+            2: reg_2 <= rd_value;
             default:;
         endcase
      end 
    end
 
-   assign reg_0_value = reg_0;
-   assign reg_1_value = reg_1;
-   assign reg_2_value = reg_2;
+   assign r0_value = reg_0;
+   assign r1_value = reg_1;
+   assign r2_value = reg_2;
 
 endmodule
    
