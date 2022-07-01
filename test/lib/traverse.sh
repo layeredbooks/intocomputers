@@ -3,7 +3,7 @@
 set -euo pipefail
 
 dir_list="hello flip_flop register instruction/memory instruction/decode"
-dir_list+=" hello_asm/andi"
+dir_list+=" hello_asm/andi hello_asm/addi"
 
 layer_list="vhdl verilog systemc_tlm"
 

@@ -9,7 +9,7 @@ rd_value=$(grep -A35 $d_name $output_log | grep rd_value | \
                   sed 's/^.*rd_value=//' | sed 's/,.*//' | tr '\n' ' ' | \
                   tr -d "\'" | sed 's/[ \t]*$//')
 
-expected_rd_value="10010000 00000000 00000000 00000000 00000000 00000000 00000000"
+expected_rd_value="10010000 00000000 00000048 00000000 00000000 00000000 00000000"
 
 if [ "$rd_value" != "$expected_rd_value" ]; then
     echo "test $d_name: FAIL"
@@ -22,7 +22,7 @@ rd=$(grep -A35 $d_name $output_log | grep rd= | \
            sed 's/^.*rd=//' | sed 's/,.*//' | tr '\n' ' ' | \
            tr -d "\'" | sed 's/[ \t]*$//')
 
-expected_rd="05 06 00 00 00 00 00"
+expected_rd="05 06 06 00 00 00 00"
 
 if [ "$rd" != "$expected_rd" ]; then
     echo "test $d_name: FAIL"
@@ -35,7 +35,7 @@ rs1=$(grep -A35 $d_name $output_log | grep rs1= | \
            sed 's/^.*rs1=//' | sed 's/,.*//' | tr '\n' ' ' | \
            tr -d "\'" | sed 's/[ \t]*$//')
 
-expected_rs1="02 06 00 00 00 00 00"
+expected_rs1="02 06 06 00 00 00 00"
 
 if [ "$rs1" != "$expected_rs1" ]; then
     echo "test $d_name: FAIL"

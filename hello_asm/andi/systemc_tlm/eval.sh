@@ -5,6 +5,19 @@ set -euo pipefail
 d_name=$1
 output_log=$2
 
+rd_value=$(grep -A35 $d_name $output_log | grep rd_value | \
+                  sed 's/^.*rd_value=//' | sed 's/,.*//' | tr '\n' ' ' | \
+                  tr -d "\'" | sed 's/[ \t]*$//')
+
+expected_rd_value="10010000 00000000 00000000 00000000 00000000 00000000 00000000"
+
+if [ "$rd_value" != "$expected_rd_value" ]; then
+    echo "test $d_name: FAIL"
+    echo "rd_value : $rd_value"
+    echo "expected_rd_value : $expected_rd_value"
+    exit 1
+fi
+
 rd=$(grep -A35 $d_name $output_log | grep rd= | \
            sed 's/^.*rd=//' | sed 's/,.*//' | tr '\n' ' ' | \
            tr -d "\'" | sed 's/[ \t]*$//')

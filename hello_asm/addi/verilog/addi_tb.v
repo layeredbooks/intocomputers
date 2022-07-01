@@ -16,6 +16,7 @@ module andi_tb;
    reg [4:0] rs2 = 5'b0;
    wire [4:0] rd;
    wire [6:0] opcode;
+   wire [2:0] funct3;
 
    wire [31:0]  imm_value;
 
@@ -42,11 +43,11 @@ module andi_tb;
    memory #(.size(size)) 
      memory_0(clk, mem_write_enable, pc_address, data_in, data_out);
 
-   idecode idecode_0 (data_out, imm_value, rs1, rd, opcode);
+   idecode idecode_0 (data_out, imm_value, rs1, rd, opcode, funct3);
 
    registers registers_0 (clk, rs1, rs2, rd, rd_value, 
                           reg_write_enable, rs1_value, rs2_value);
 
-   alu alu_0 (imm_value, rs1_value, opcode, rd_value);
+   alu alu_0 (imm_value, rs1_value, opcode, funct3, rd_value);
    
 endmodule

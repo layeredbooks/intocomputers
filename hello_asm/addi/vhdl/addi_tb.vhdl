@@ -4,10 +4,10 @@ use ieee.numeric_std.all;
 use std.textio.all;
 use work.string_lib.all;
 
-entity andi_tb is
-end andi_tb;
+entity addi_tb is
+end addi_tb;
 
-architecture behavior of andi_tb is
+architecture behavior of addi_tb is
 
   constant size: integer := 12;
 
@@ -35,7 +35,8 @@ architecture behavior of andi_tb is
       imm_value: out std_logic_vector(31 downto 0);
       rs1: out std_logic_vector(4 downto 0);
       rd: out std_logic_vector(4 downto 0);
-      opcode: out std_logic_vector(6 downto 0));
+      opcode: out std_logic_vector(6 downto 0);
+      funct3: out std_logic_vector(2 downto 0));
 
   end component;
 
@@ -61,6 +62,7 @@ architecture behavior of andi_tb is
       a: in std_logic_vector(31 downto 0);
       b: in std_logic_vector(31 downto 0);
       opcode: in std_logic_vector(6 downto 0);
+      funct3: in std_logic_vector(2 downto 0);
       result: out std_logic_vector(31 downto 0));
 
   end component;
@@ -83,6 +85,7 @@ architecture behavior of andi_tb is
   signal rs2: std_logic_vector(4 downto 0) := (others => '0');
   signal rd: std_logic_vector(4 downto 0);
   signal opcode: std_logic_vector(6 downto 0);
+  signal funct3: std_logic_vector(2 downto 0);
 
   signal imm_value: std_logic_vector(31 downto 0);
 
@@ -114,7 +117,8 @@ begin
       imm_value => imm_value,
       rs1 => rs1,
       rd => rd,
-      opcode => opcode);
+      opcode => opcode,
+      funct3 => funct3);
   
   registers_0: registers
     port map(
@@ -132,6 +136,7 @@ begin
       a => imm_value,
       b => rs1_value,
       opcode => opcode,
+      funct3 => funct3,
       result => rd_value);
 
   clk_gen: process is

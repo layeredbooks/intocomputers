@@ -60,12 +60,13 @@ class cpu : sc_core::sc_module
             uint32_t rs1;
             uint32_t rd;
             uint32_t opcode;
+            uint32_t funct3;
             
             trans.set_address(pc_value); 
             sc_core::sc_time delay(sc_core::SC_ZERO_TIME);
             socket->b_transport(trans, delay);
 
-            idc.decode(data_out, imm_value, rs1, rd, opcode);
+            idc.decode(data_out, imm_value, rs1, rd, opcode, funct3);
 
             const uint32_t LUI = 0x37;
             const uint32_t OP_IMM = 0x13;
@@ -75,9 +76,13 @@ class cpu : sc_core::sc_module
             {
                 rd_value = imm_value;    
             }
-            else if (opcode == OP_IMM)
+            else if (opcode == OP_IMM && funct3 == 0x7)
             {
                 rd_value = imm_value & reg_read(rs1);
+            }
+            else if (opcode == OP_IMM && funct3 == 0x0)
+            {
+                rd_value = imm_value + reg_read(rs1);
             }
             else
             {

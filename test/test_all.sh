@@ -37,3 +37,7 @@ printf "\n--- Test Log - $date_info ---\n\n" > all_output.log
 ./test_one.sh ../hello_asm/andi/verilog verilog
 ./test_one.sh ../hello_asm/andi/systemc_tlm systemc_tlm
 
+./test_one.sh ../hello_asm/addi/vhdl vhdl
+./test_one.sh ../hello_asm/addi/verilog verilog
+./test_one.sh ../hello_asm/addi/systemc_tlm systemc_tlm
+
